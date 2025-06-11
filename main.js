@@ -1,0 +1,1 @@
+// Compiled React app will go here (simulate loading component)
