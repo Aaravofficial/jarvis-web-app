@@ -63,11 +63,11 @@ renderContent('all-classes');
 
 // SUBJECT MAPPING (as provided)
 const batchSubjects = {
-  "Yakeen NEET 2026": [
+  "YAKEEN NEET 2026": [
     "Physics", "Botany", "Zoology",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Yakeen NEET 2.0 2026": [
+  "YAKEEN NEET 2.0 2026": [
     "Physics : MR Sir", "Physics : Saleem Sir",
     "Physical Chemistry : Amit Mahajan Sir", "Physical Chemistry : Sudhanshu Kumar Sir",
     "Organic Chemistry : Pankaj Sijariya Sir", "Organic Chemistry : Shubh Karan Chaudhary Sir",
@@ -75,43 +75,43 @@ const batchSubjects = {
     "Botany : Rupesh Chaudhary Sir", "Botany : Vipin Sharma Sir",
     "Zoology : Samapti Sinha Ma'am", "Zoology : Dr Akanksha Agarwal Ma'am"
   ],
-  "Arjuna JEE 2026": [
+  "ARJUNA JEE 2026": [
     "Physics", "Maths",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Arjuna JEE 2.0 2026": [
+  "ARJUNA JEE 2.0 2026": [
     "Physics", "Maths",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Lakshya JEE 2026": [
+  "LAKSHYA JEE 2026": [
     "Physics", "Maths",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Lakshya JEE 2.0 2026": [
+  "LAKSHYA JEE 2.0 2026": [
     "Physics", "Maths",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Prayas JEE 2026": [
+  "PRAYAS JEE 2026": [
     "Physics", "Maths",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Prayas JEE 2.0 2026": [
+  "PRAYAS JEE 2.0 2026": [
     "Physics", "Maths",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Arjuna NEET 2026": [
+  "ARJUNA NEET 2026": [
     "Physics", "Botany", "Zoology",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Arjuna NEET 2.0 2026": [
+  "ARJUNA NEET 2.0 2026": [
     "Physics", "Botany", "Zoology",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Lakshya NEET 2026": [
+  "LAKSHYA NEET 2026": [
     "Physics", "Botany", "Zoology",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ],
-  "Lakshya NEET 2.0 2026": [
+  "LAKSHYA NEET 2.0 2026": [
     "Physics", "Botany", "Zoology",
     "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
   ]
