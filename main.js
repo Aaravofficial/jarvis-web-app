@@ -1,64 +1,49 @@
-let allContent = [];
+import contentData from './content.json';
 
-fetch('content.json')
-  .then(res => res.json())
-  .then(data => {
-    allContent = data;
-    populateFilterOptions(data);
-    renderContent(data);
-  });
-
+const courseSelect = document.getElementById('courseSelect');
 const searchInput = document.getElementById('searchInput');
-const courseFilter = document.getElementById('courseFilter');
-const contentGrid = document.getElementById('contentGrid');
-const toggleDarkMode = document.getElementById('toggleDarkMode');
+const contentContainer = document.getElementById('contentContainer');
 
-searchInput.addEventListener('input', applyFilters);
-courseFilter.addEventListener('change', applyFilters);
-toggleDarkMode.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-});
+// Create colorful, attractive uppercase title
+const createTitle = (name) => {
+  const colors = ['#d32f2f', '#388e3c', '#1976d2', '#f57c00', '#7b1fa2', '#0097a7'];
+  const color = colors[name.length % colors.length];
+  return `<h2 style="color:${color}; font-weight:bold; font-size: 1.2rem; text-transform: uppercase; margin-bottom: 0.5rem;">${name}</h2>`;
+};
 
-function populateFilterOptions(data) {
-  const uniqueCourses = [...new Set(data.map(item => item.course))];
-  uniqueCourses.forEach(course => {
-    const option = document.createElement('option');
-    option.value = course;
-    option.textContent = course;
-    courseFilter.appendChild(option);
+// Create card for each batch
+const createCard = (item) => {
+  return `
+    <div class="batch-card">
+      ${createTitle(item.name)}
+      <img src="${item.thumbnail}" alt="${item.name}" class="thumbnail"/>
+      <a href="${item.link}" class="welcome-btn" target="_blank">WELCOME</a>
+    </div>
+  `;
+};
+
+// Render content based on filter + search
+const renderContent = () => {
+  const selectedCourse = courseSelect.value;
+  const searchTerm = searchInput.value.toLowerCase();
+
+  const filteredContent = contentData.filter(item => {
+    const matchesCourse = !selectedCourse || item.course === selectedCourse;
+    const matchesSearch = item.name.toLowerCase().includes(searchTerm);
+    return matchesCourse && matchesSearch;
   });
-}
 
-function applyFilters() {
-  const search = searchInput.value.toLowerCase();
-  const selectedCourse = courseFilter.value;
-
-  const filtered = allContent.filter(item => {
-    const matchName = item.name.toLowerCase().includes(search);
-    const matchCourse = selectedCourse === 'all' || item.course === selectedCourse;
-    return matchName && matchCourse;
-  });
-
-  renderContent(filtered);
-}
-
-function renderContent(data) {
-  contentGrid.innerHTML = '';
-  if (data.length === 0) {
-    contentGrid.innerHTML = '<p>No matching content found.</p>';
+  if (filteredContent.length === 0) {
+    contentContainer.innerHTML = `<p style="text-align:center;color:gray;">No batches found.</p>`;
     return;
   }
 
-  data.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
+  contentContainer.innerHTML = filteredContent.map(createCard).join('');
+};
 
-    card.innerHTML = `
-      <h3>${item.name}</h3>
-      <p>Course: ${item.course}</p>
-      <a href="${item.link}" target="_blank">Open</a>
-    `;
+// Event listeners
+courseSelect.addEventListener('change', renderContent);
+searchInput.addEventListener('input', renderContent);
 
-    contentGrid.appendChild(card);
-  });
-      }
+// Initial render
+renderContent();
