@@ -3,21 +3,22 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff;
-  color: #111;
+  background: #0f0f0f;
+  color: #f0f0f0;
   transition: background 0.3s, color 0.3s;
 }
 
 body.dark {
-  background: #121212;
+  background: #0f0f0f;
   color: #f0f0f0;
 }
 
 header {
-  background: #4a90e2;
+  background: #0a192f;
   color: white;
   padding: 1rem;
   text-align: center;
+  box-shadow: 0 0 15px #007bff;
 }
 
 .search-filter {
@@ -32,15 +33,25 @@ header {
 .search-filter select {
   padding: 0.5rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: #fff;
 }
 
 .search-filter button {
   padding: 0.5rem 1rem;
   border: none;
-  background: #333;
+  background: #1e90ff;
   color: white;
   border-radius: 8px;
+  box-shadow: 0 0 10px #1e90ff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.search-filter button:hover {
+  background: #3399ff;
+  box-shadow: 0 0 15px #3399ff;
 }
 
 main#contentGrid {
@@ -52,10 +63,10 @@ main#contentGrid {
 
 .card {
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   padding: 1rem;
   text-align: center;
-  background: #fafafa;
+  background: #1c1c1c;
   transition: transform 0.2s;
 }
 
@@ -73,13 +84,21 @@ main#contentGrid {
 
 .welcome-btn {
   display: inline-block;
-  background: #d63384;
+  background: #0066ff;
   color: white;
   padding: 0.6rem 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: bold;
   margin-top: 0.5rem;
+  box-shadow: 0 0 12px #0066ff;
+  transition: all 0.3s ease;
+}
+
+.welcome-btn:hover {
+  background: #3399ff;
+  box-shadow: 0 0 20px #3399ff;
+  transform: scale(1.05);
 }
 
 footer {
@@ -91,11 +110,14 @@ footer {
 
 /* === BATCH PAGE === */
 .batch-header {
-  background: #4a90e2;
+  background: #0a192f;
   color: white;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  box-shadow: 0 0 20px #1e90ff;
+  border-radius: 0 0 12px 12px;
 }
 
 .option-toggle {
@@ -105,11 +127,19 @@ footer {
 
 .option-toggle button {
   padding: 0.6rem 1.2rem;
-  background: #222;
+  background: #1c1c1c;
   color: #fff;
   border: none;
   border-radius: 8px;
   font-weight: bold;
+  box-shadow: 0 0 10px #444;
+  transition: all 0.3s ease;
+}
+
+.option-toggle button:hover {
+  background: #333;
+  box-shadow: 0 0 12px #1e90ff;
+  transform: scale(1.05);
 }
 
 .option-toggle button span#arrow {
@@ -130,21 +160,25 @@ footer {
 
 .batch-option {
   padding: 0.6rem 1rem;
-  background: #f0f0f0;
+  background: #1f1f1f;
   border-radius: 8px;
   cursor: pointer;
+  color: #ddd;
+  box-shadow: 0 0 8px #111;
 }
 
 .batch-option.active {
-  background: #4a90e2;
+  background: #1e90ff;
   color: #fff;
+  box-shadow: 0 0 15px #1e90ff;
 }
 
 .motivational {
   text-align: center;
   margin: 1rem 0;
-  color: #d63384;
+  color: #00ffcc;
   font-weight: bold;
+  text-shadow: 0 0 8px #00ffcc;
 }
 
 .sections {
@@ -156,13 +190,19 @@ footer {
 
 .section-btn {
   padding: 0.6rem;
-  border: 1px solid #888;
-  border-radius: 8px;
-  background: #fff;
+  border: none;
+  border-radius: 10px;
+  background: #1a1a1a;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px #4facfe;
+  transition: all 0.3s ease;
 }
 
 .section-btn:hover {
-  background: #f0f0f0;
+  box-shadow: 0 0 15px #4facfe;
+  background-color: #2a2a2a;
+  transform: scale(1.05);
 }
 
 /* === DARK MODE === */
@@ -172,7 +212,8 @@ body.dark .card {
 }
 
 body.dark .welcome-btn {
-  background: #bb86fc;
+  background: #0066ff;
+  box-shadow: 0 0 12px #0066ff;
 }
 
 body.dark .search-filter input,
@@ -183,20 +224,20 @@ body.dark .search-filter select {
 }
 
 body.dark header {
-  background: #333;
+  background: #0a192f;
 }
 
 body.dark .batch-header {
-  background: #333;
+  background: #0a192f;
 }
 
 body.dark .batch-option {
-  background: #444;
+  background: #222;
   color: white;
 }
 
 body.dark .batch-option.active {
-  background: #bb86fc;
+  background: #1e90ff;
   color: white;
 }
 
@@ -212,4 +253,4 @@ body.dark .section-btn {
 
 body.dark .section-btn:hover {
   background: #333;
-    }
+  }
