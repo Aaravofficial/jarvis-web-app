@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AaRAv OffiCiaL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,19 +11,35 @@
     <h1>AaRAv OffiCiaL</h1>
     <div class="search-filter">
       <input type="text" id="searchInput" placeholder="Search by batch name..." />
-      <select id="courseSelect">
-        <option value="">All Courses</option>
+      <select id="courseFilter">
+        <option value="all">All Courses</option>
       </select>
       <button id="toggleDarkMode">🌙</button>
     </div>
   </header>
 
-  <div id="contentContainer">
-    <!-- Batch cards will be injected here -->
+  <main id="contentGrid">
+    <!-- Cards will appear here -->
+  </main>
+
+  <!-- Modal for batch -->
+  <div id="batchModal" class="modal">
+    <div class="modal-content">
+      <h2 id="batchTitle" class="modal-title"></h2>
+      <button class="dropdown-toggle" onclick="toggleDropdown()">
+        Open Menu <span id="arrow">ˇ</span>
+      </button>
+      <div id="dropdownButtons" class="hidden dropdown-container">
+        <a href="#" class="dropdown-btn">Description</a>
+        <a href="#" class="dropdown-btn">All Classes</a>
+        <a href="#" class="dropdown-btn">Khazana</a>
+        <a href="#" class="dropdown-btn">Announcements</a>
+      </div>
+    </div>
   </div>
 
   <footer>
-    <p>© 2025 Jarvis Web App | Built by Aarav</p>
+    <p>© 2025 AaRAv OffiCiaL | Built with ❤️</p>
   </footer>
 
   <script src="main.js"></script>
