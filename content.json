@@ -1,6 +1,22 @@
-
-{
-  "videos": [],
-  "pdfs": [],
-  "audios": []
-}
+[
+  {
+    "name": "Motion in a Straight Line - Lecture 1",
+    "course": "Physics",
+    "link": "https://example.com/motion1.mp4"
+  },
+  {
+    "name": "Some Basic Concepts of Chemistry - Notes",
+    "course": "Chemistry",
+    "link": "https://example.com/chemistry-notes.pdf"
+  },
+  {
+    "name": "Cell Structure & Functions - Lecture 2",
+    "course": "Biology",
+    "link": "https://example.com/cell2.mp4"
+  },
+  {
+    "name": "India: Size and Location - NCERT",
+    "course": "Geography",
+    "link": "https://example.com/geo-ncert.pdf"
+  }
+]
