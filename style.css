@@ -180,10 +180,10 @@ footer {
 
 .section-btn {
   width: 85%; /* narrower width */
-  height: 3.2rem; /* increased height */
+  height: 3.5rem; /* increased height */
   padding: 1rem;
   font-size: 1rem;
-  background: #ffffff;
+  background: #1a1a1a;
   border: 1px solid #888;
   border-radius: 12px;
   text-align: center;
@@ -191,7 +191,7 @@ footer {
 }
 
 .section-btn:hover {
-  background: #f0f0f0;
+  background: #2a2a2a;
   transform: scale(1.02);
 }
 
