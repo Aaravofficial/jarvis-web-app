@@ -170,10 +170,11 @@ footer {
 }
 
 .sections {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-  margin: 1rem;
+  margin: 1rem auto;
+  max-width: 400px; /* Optional: Limits the width for better readability */
 }
 
 .section-btn {
