@@ -1,3 +1,4 @@
+// Main JavaScript for homepage
 let allContent = [];
 
 fetch('content.json')
@@ -54,35 +55,11 @@ function renderContent(data) {
     card.className = 'card';
 
     card.innerHTML = `
-      <h3 style="color: #d63384; font-weight: bold; text-transform: uppercase; text-align: center;">${item.name}</h3>
-      <img src="${item.thumbnail}" alt="${item.name} Thumbnail" class="thumb" />
-      <button class="welcome-btn" onclick="openBatch('${item.name}')">WELCOME</button>
+      <h3>${item.name}</h3>
+      <img src="${item.thumbnail}" alt="${item.name}" class="thumbnail"/>
+      <a href="batch.html?name=${encodeURIComponent(item.name)}" class="welcome-btn">WELCOME</a>
     `;
 
     contentGrid.appendChild(card);
   });
 }
-
-// Modal open function
-function openBatch(batchName) {
-  document.getElementById('batchTitle').textContent = batchName.toUpperCase();
-  document.getElementById('batchModal').style.display = 'block';
-  document.getElementById('dropdownButtons').classList.add('hidden');
-  document.getElementById('arrow').textContent = 'ˇ';
-}
-
-// Dropdown toggle inside modal
-function toggleDropdown() {
-  const dropdown = document.getElementById('dropdownButtons');
-  const arrow = document.getElementById('arrow');
-  dropdown.classList.toggle('hidden');
-  arrow.textContent = dropdown.classList.contains('hidden') ? 'ˇ' : '^';
-}
-
-// Close modal when clicking outside
-window.onclick = function(event) {
-  const modal = document.getElementById('batchModal');
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-};
