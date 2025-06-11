@@ -179,21 +179,23 @@ footer {
 }
 
 .section-btn {
-  width: 85%; /* narrower width */
-  height: 4.8rem; /* increased height */
+  width: 85%;
+  height: 5rem;
   padding: 1rem;
   font-size: 1rem;
   background: #1a1a1a;
   color: White;
+  border: none; /* Removed border */
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional soft shadow */
 }
 
 .section-btn:hover {
   background: #2a2a2a;
   transform: scale(1.02);
-}
+  }
 
 /* === DARK MODE === */
 body.dark .card {
@@ -237,9 +239,9 @@ body.dark .option-toggle button {
 body.dark .section-btn {
   background: #222;
   color: white;
-  border-color: #666;
+  border: none; /* No stroke */
 }
 
 body.dark .section-btn:hover {
   background: #333;
-  }
+}
