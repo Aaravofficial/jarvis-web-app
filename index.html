@@ -1,26 +1,27 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jarvis Web App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>Jarvis Library</h1>
     <div class="search-filter">
       <input type="text" id="searchInput" placeholder="Search by batch name..." />
-      <select id="courseFilter">
-        <option value="all">All Courses</option>
+      <select id="courseSelect">
+        <option value="">All Courses</option>
       </select>
       <button id="toggleDarkMode">🌙</button>
     </div>
   </header>
 
-  <div id="contentGrid">
-    <!-- Content will be loaded here by JavaScript -->
+  <div id="contentContainer">
+    <!-- Batch cards will be injected here -->
   </div>
 
   <footer>
@@ -30,3 +31,4 @@
   <script src="main.js"></script>
 </body>
 </html>
+```
