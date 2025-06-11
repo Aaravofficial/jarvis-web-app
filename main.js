@@ -1,4 +1,3 @@
-```js
 let allContent = [];
 
 fetch('content.json')
@@ -47,21 +46,18 @@ function renderContent(data) {
   contentContainer.innerHTML = '';
 
   if (data.length === 0) {
-    contentContainer.innerHTML = '<p>No matching content found.</p>';
+    contentContainer.innerHTML = '<p style="text-align:center;color:gray;">No matching batches found.</p>';
     return;
   }
 
   data.forEach(item => {
     const card = document.createElement('div');
     card.className = 'batch-card';
-
     card.innerHTML = `
       <h2>${item.name.toUpperCase()}</h2>
       <img src="${item.thumbnail}" alt="${item.name}" class="thumbnail" />
       <a href="${item.link}" class="welcome-btn" target="_blank">WELCOME</a>
     `;
-
     contentContainer.appendChild(card);
   });
 }
-```
