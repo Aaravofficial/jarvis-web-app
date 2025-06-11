@@ -1,15 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Jarvis Web App</title>
-    <script type="module" crossorigin src="./main.js"></script>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-  <h1>Hello, Jarvis!</h1>
-  <p>Your site is working!</p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jarvis Web App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Jarvis Library</h1>
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Search by batch name..." />
+      <select id="courseFilter">
+        <option value="all">All Courses</option>
+      </select>
+      <button id="toggleDarkMode">🌙</button>
+    </div>
+  </header>
+  <main id="contentGrid">
+    <!-- Content will be loaded here by JavaScript -->
+  </main>
+
+  <footer>
+    <p>© 2025 Jarvis Web App | Built by Aarav</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>
