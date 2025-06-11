@@ -54,8 +54,8 @@ input[type="text"], select {
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: 0.3s;
   text-align: center;
+  transition: transform 0.3s;
 }
 
 .card:hover {
@@ -64,29 +64,35 @@ input[type="text"], select {
 
 .card h3 {
   margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #2e7dff;
 }
 
 .card img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-.card button {
-  background-color: #6a1b9a;
-  color: white;
-  border: none;
+.card .welcome-btn {
+  background-color: #6200ea;
+  color: #fff;
   padding: 0.5rem 1rem;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.card button:hover {
-  background-color: #8e24aa;
+.card .welcome-btn:hover {
+  background-color: #4b00b5;
 }
 
 footer {
@@ -106,7 +112,8 @@ body.dark .card {
   color: #eee;
 }
 
-body.dark input, body.dark select {
+body.dark input,
+body.dark select {
   background-color: #333;
   color: #eee;
   border: 1px solid #555;
@@ -117,74 +124,87 @@ body.dark #toggleDarkMode {
   color: #000;
 }
 
-/* Modal Styling */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-  padding-top: 100px;
-}
-
-.modal-content {
-  background-color: #fff;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-}
-
-.modal-title {
-  background: linear-gradient(135deg, #ff4081, #7c4dff);
-  color: #fff;
+/* EXPANDABLE WRAPPER DESIGN FOR BATCH PAGE */
+.batch-header {
+  background-color: #4b00b5;
+  color: white;
   padding: 1rem;
-  border-radius: 8px;
-  text-transform: uppercase;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-.dropdown-toggle {
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  background-color: #263238;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
+.wrapper {
+  max-width: 600px;
+  margin: auto;
+  background: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.expander-btn {
   width: 100%;
+  text-align: left;
+  background: #ddd;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  margin-bottom: 0.5rem;
+  position: relative;
 }
 
-.dropdown-container {
-  display: flex;
+.expander-btn::after {
+  content: 'ˇ';
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+
+.expander-btn.active::after {
+  content: '^';
+}
+
+.submenu {
+  display: none;
   flex-direction: column;
+  padding: 0.5rem 1rem 1rem 1rem;
   gap: 0.5rem;
-  margin-top: 1rem;
+  background: #eee;
 }
 
-.dropdown-btn {
-  background-color: #007bff;
-  color: #fff;
+.submenu a {
   padding: 0.5rem;
+  background: #6200ea;
+  color: white;
+  text-align: center;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.hidden {
-  display: none;
+.submenu a:hover {
+  background: #4b00b5;
 }
 
-body.dark .modal-content {
-  background-color: #222;
+body.dark .wrapper {
+  background: #222;
 }
 
-body.dark .modal-title {
-  background: linear-gradient(135deg, #00e676, #00acc1);
-  }
+body.dark .expander-btn {
+  background: #333;
+  color: #eee;
+}
+
+body.dark .submenu {
+  background: #111;
+}
+
+body.dark .submenu a {
+  background: #3700b3;
+}
