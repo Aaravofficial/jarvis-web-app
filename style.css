@@ -1,49 +1,215 @@
+/* === GENERAL === */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #111;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+header {
+  background: #4a90e2;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.search-filter input,
+.search-filter select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-filter button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 8px;
+}
+
+main#contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  text-align: center;
+  background: #fafafa;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+.welcome-btn {
+  display: inline-block;
+  background: #d63384;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+/* === BATCH PAGE === */
+.batch-header {
+  background: #4a90e2;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .option-toggle {
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin: 1rem;
 }
+
+.option-toggle button {
+  padding: 0.6rem 1.2rem;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.option-toggle button span#arrow {
+  margin-left: 0.5rem;
+}
+
 .options-wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.hidden { display: none; }
+
+.hidden {
+  display: none;
+}
+
 .batch-option {
   padding: 0.6rem 1rem;
   background: #f0f0f0;
   border-radius: 8px;
   cursor: pointer;
 }
+
 .batch-option.active {
-  background: #4a90e2; color: #fff;
+  background: #4a90e2;
+  color: #fff;
 }
-.option-toggle button {
-  padding: 0.6rem 1.2rem;
-  background: #222; color: #fff;
-  border: none; border-radius: 8px;
+
+.motivational {
+  text-align: center;
+  margin: 1rem 0;
+  color: #d63384;
   font-weight: bold;
 }
-.option-toggle button span#arrow {
-  margin-left: 0.5rem;
-}
-.motivational {
-  text-align: center; margin: 1rem 0;
-  color: #d63384; font-weight: bold;
-}
+
 .sections {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
+
 .section-btn {
-  padding: 0.5rem;
+  padding: 0.6rem;
   border: 1px solid #888;
   border-radius: 8px;
   background: #fff;
 }
+
 .section-btn:hover {
   background: #f0f0f0;
 }
-/* Dark mode support... */
+
+/* === DARK MODE === */
+body.dark .card {
+  background: #1e1e1e;
+  color: white;
+}
+
+body.dark .welcome-btn {
+  background: #bb86fc;
+}
+
+body.dark .search-filter input,
+body.dark .search-filter select {
+  background: #2c2c2c;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark header {
+  background: #333;
+}
+
+body.dark .batch-header {
+  background: #333;
+}
+
+body.dark .batch-option {
+  background: #444;
+  color: white;
+}
+
+body.dark .batch-option.active {
+  background: #bb86fc;
+  color: white;
+}
+
+body.dark .option-toggle button {
+  background: #444;
+}
+
+body.dark .section-btn {
+  background: #222;
+  color: white;
+  border-color: #666;
+}
+
+body.dark .section-btn:hover {
+  background: #333;
+    }
