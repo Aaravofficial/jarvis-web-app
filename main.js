@@ -1,4 +1,3 @@
-// Main JavaScript for homepage
 let allContent = [];
 
 fetch('content.json')
@@ -55,11 +54,11 @@ function renderContent(data) {
     card.className = 'card';
 
     card.innerHTML = `
-      <h3>${item.name}</h3>
       <img src="${item.thumbnail}" alt="${item.name}" class="thumbnail"/>
+      <h3>${item.name}</h3>
       <a href="batch.html?name=${encodeURIComponent(item.name)}" class="welcome-btn">WELCOME</a>
     `;
 
     contentGrid.appendChild(card);
   });
-}
+      }
