@@ -105,7 +105,7 @@ footer {
 /* === BATCH PAGE === */
 .batch-header {
   background: #222;
-  color: Purple;
+  color: Blue;
   padding: 1rem;
   font-size: 1.3rem;
   margin: 1.5rem auto;
@@ -185,7 +185,6 @@ footer {
   font-size: 1rem;
   background: #1a1a1a;
   color: White;
-  border: 1px solid #888;
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
