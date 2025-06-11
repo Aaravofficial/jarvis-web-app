@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Batch Details</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="batch-header">
     <h1 id="batchNameDisplay">BATCH NAME</h1>
   </header>
 
-  <div class="batch-controls">
-    <button id="optionToggle">
-      All Classes <span id="arrow">ˇ</span>
-    </button>
-    <div id="optionsWrapper" class="hidden">
-      <button class="batch-option" data-option="description">Description</button>
-      <button class="batch-option active" data-option="all-classes">All Classes</button>
-      <button class="batch-option" data-option="khazana">Khazana</button>
-      <button class="batch-option" data-option="announcements">Announcements</button>
-    </div>
+  <div class="option-toggle">
+    <button id="optionToggle">All Classes <span id="arrow">ˇ</span></button>
   </div>
 
-  <section id="batchContent" class="batch-content">
-    <!-- Dynamic content will go here -->
-  </section>
+  <div class="options-wrapper hidden" id="optionsWrapper">
+    <button class="batch-option active" data-option="all-classes">All Classes</button>
+    <button class="batch-option" data-option="description">Description</button>
+    <button class="batch-option" data-option="khazana">Khazana</button>
+    <button class="batch-option" data-option="announcements">Announcements</button>
+  </div>
+
+  <section id="batchContent" class="batch-content"></section>
 
   <script src="batch.js"></script>
 </body>
