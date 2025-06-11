@@ -1,219 +1,49 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-  background-color: #ffffff;
-  color: #111;
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.search-filter {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-input[type="text"], select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-#toggleDarkMode {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: none;
-  background: #444;
-  color: #fff;
-  cursor: pointer;
-}
-
-#contentGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  padding: 1rem 0;
-}
-
-.card {
-  background: #f2f2f2;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin-bottom: 0.5rem;
-  color: #000;
-}
-
-.card a {
-  text-decoration: none;
-}
-
-.card button {
-  margin-top: 10px;
-  padding: 0.4rem 0.8rem;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.card button:hover {
-  background-color: #367cd5;
-}
-
-/* Dark mode */
-body.dark {
-  background-color: #111;
-  color: #eee;
-}
-
-body.dark .card {
-  background: #222;
-  color: #eee;
-}
-
-body.dark input, body.dark select {
-  background-color: #333;
-  color: #eee;
-  border: 1px solid #555;
-}
-
-body.dark #toggleDarkMode {
-  background: #eee;
-  color: #000;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #777;
-  margin-top: 2rem;
-}
-
-/* === BATCH.HTML CUSTOM STYLES === */
-
-.batch-header {
-  text-align: center;
-  padding: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(90deg, #ff5f6d, #ffc371);
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-/* Dropdown */
 .option-toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   margin-bottom: 0.5rem;
 }
-
-.option-toggle button {
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  border-radius: 10px;
-  border: none;
-  background-color: #222;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-}
-
 .options-wrapper {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-bottom: 1rem;
 }
-
-.hidden {
-  display: none;
-}
-
+.hidden { display: none; }
 .batch-option {
-  padding: 0.5rem 1rem;
-  background: #e0e0e0;
+  padding: 0.6rem 1rem;
+  background: #f0f0f0;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
 }
-
-.batch-option:hover {
-  background: #ccc;
-}
-
 .batch-option.active {
-  background-color: #4a90e2;
-  color: white;
+  background: #4a90e2; color: #fff;
 }
-
-/* Motivational Message */
-.motivational {
-  text-align: center;
+.option-toggle button {
+  padding: 0.6rem 1.2rem;
+  background: #222; color: #fff;
+  border: none; border-radius: 8px;
   font-weight: bold;
-  color: #d63384;
-  font-size: 1.1rem;
-  margin: 1rem 0;
-  line-height: 1.5;
 }
-
-/* Sections */
+.option-toggle button span#arrow {
+  margin-left: 0.5rem;
+}
+.motivational {
+  text-align: center; margin: 1rem 0;
+  color: #d63384; font-weight: bold;
+}
 .sections {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.8rem;
-  padding: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
-
 .section-btn {
-  padding: 0.6rem;
-  font-weight: 600;
+  padding: 0.5rem;
   border: 1px solid #888;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #fff;
-  cursor: pointer;
-  transition: background 0.3s;
 }
-
 .section-btn:hover {
-  background-color: #f0f0f0;
+  background: #f0f0f0;
 }
-
-body.dark .section-btn {
-  background: #222;
-  color: #eee;
-  border: 1px solid #555;
-}
-
-body.dark .section-btn:hover {
-  background: #333;
-  }
+/* Dark mode support... */
