@@ -18,7 +18,6 @@ header {
   color: white;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 0 15px #007bff;
 }
 
 .search-filter {
@@ -44,14 +43,12 @@ header {
   background: #1e90ff;
   color: white;
   border-radius: 8px;
-  box-shadow: 0 0 10px #1e90ff;
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
 .search-filter button:hover {
   background: #3399ff;
-  box-shadow: 0 0 15px #3399ff;
 }
 
 main#contentGrid {
@@ -63,10 +60,9 @@ main#contentGrid {
 
 .card {
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  background: #1c1c1c;
   padding: 1rem;
   text-align: center;
-  background: #1c1c1c;
   transition: transform 0.2s;
 }
 
@@ -91,13 +87,11 @@ main#contentGrid {
   text-decoration: none;
   font-weight: bold;
   margin-top: 0.5rem;
-  box-shadow: 0 0 12px #0066ff;
   transition: all 0.3s ease;
 }
 
 .welcome-btn:hover {
   background: #3399ff;
-  box-shadow: 0 0 20px #3399ff;
   transform: scale(1.05);
 }
 
@@ -116,7 +110,6 @@ footer {
   text-align: center;
   font-size: 1.6rem;
   font-weight: bold;
-  box-shadow: 0 0 20px #1e90ff;
   border-radius: 0 0 12px 12px;
 }
 
@@ -132,13 +125,11 @@ footer {
   border: none;
   border-radius: 8px;
   font-weight: bold;
-  box-shadow: 0 0 10px #444;
   transition: all 0.3s ease;
 }
 
 .option-toggle button:hover {
   background: #333;
-  box-shadow: 0 0 12px #1e90ff;
   transform: scale(1.05);
 }
 
@@ -164,13 +155,11 @@ footer {
   border-radius: 8px;
   cursor: pointer;
   color: #ddd;
-  box-shadow: 0 0 8px #111;
 }
 
 .batch-option.active {
   background: #1e90ff;
   color: #fff;
-  box-shadow: 0 0 15px #1e90ff;
 }
 
 .motivational {
@@ -178,7 +167,6 @@ footer {
   margin: 1rem 0;
   color: #00ffcc;
   font-weight: bold;
-  text-shadow: 0 0 8px #00ffcc;
 }
 
 .sections {
@@ -195,12 +183,10 @@ footer {
   background: #1a1a1a;
   color: white;
   font-weight: bold;
-  box-shadow: 0 0 10px #4facfe;
   transition: all 0.3s ease;
 }
 
 .section-btn:hover {
-  box-shadow: 0 0 15px #4facfe;
   background-color: #2a2a2a;
   transform: scale(1.05);
 }
@@ -213,7 +199,6 @@ body.dark .card {
 
 body.dark .welcome-btn {
   background: #0066ff;
-  box-shadow: 0 0 12px #0066ff;
 }
 
 body.dark .search-filter input,
