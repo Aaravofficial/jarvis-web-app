@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Batch Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .batch-header {
+      background: linear-gradient(45deg, #4b6cb7, #182848);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .dropdown-wrapper {
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .dropdown-toggle {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      background: #6200ea;
+      color: white;
+      text-align: left;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      background-color: #f2f2f2;
+    }
+
+    .dropdown-content a {
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      border-top: 1px solid #ddd;
+      font-weight: bold;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    .dropdown-content a:hover {
+      background: #eee;
+    }
+
+    .arrow {
+      font-size: 1.2rem;
+    }
+
+    .visible {
+      display: flex;
+    }
+
+    body.dark .dropdown-content a {
+      background: #333;
+      color: #eee;
+      border-color: #444;
+    }
+
+    body.dark .dropdown-toggle {
+      background: #bb86fc;
+      color: #000;
+    }
+
+    body.dark .batch-header {
+      background: linear-gradient(45deg, #6200ea, #3700b3);
+    }
+  </style>
+</head>
+<body>
+  <div class="batch-header" id="batchNameDisplay">Loading...</div>
+
+  <div class="dropdown-wrapper">
+    <button class="dropdown-toggle" onclick="toggleDropdown()">
+      Show Options <span id="arrow" class="arrow">ˇ</span>
+    </button>
+    <div id="dropdownContent" class="dropdown-content">
+      <a href="#">Description</a>
+      <a href="#">All Classes</a>
+      <a href="#">Khazana</a>
+      <a href="#">Announcements</a>
+    </div>
+  </div>
+
+  <script>
+    // Display Batch Name from URL
+    const params = new URLSearchParams(window.location.search);
+    const batchName = params.get('name');
+    document.getElementById('batchNameDisplay').textContent = batchName ? batchName.toUpperCase() : 'UNKNOWN BATCH';
+
+    // Toggle dropdown
+    function toggleDropdown() {
+      const content = document.getElementById('dropdownContent');
+      const arrow = document.getElementById('arrow');
+      content.classList.toggle('visible');
+      arrow.textContent = content.classList.contains('visible') ? '^' : 'ˇ';
+    }
+  </script>
+</body>
+</html>
