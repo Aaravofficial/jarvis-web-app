@@ -1,6 +1,5 @@
 const params = new URLSearchParams(location.search);
 const batchName = params.get('name') || "UNKNOWN BATCH";
-
 document.getElementById('batchNameDisplay').textContent = batchName.toUpperCase();
 
 const optionToggle = document.getElementById('optionToggle');
@@ -18,43 +17,102 @@ batchOptions.forEach(btn => {
   btn.addEventListener('click', () => {
     batchOptions.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const selected = btn.dataset.option;
-    optionToggle.innerHTML = `${btn.textContent} <span id="arrow">ˇ</span>`;
+
+    const selectedText = btn.textContent;
+    optionToggle.innerHTML = `${selectedText} <span id="arrow">^</span>`;
     optionsWrapper.classList.add('hidden');
-    arrow.textContent = 'ˇ';
-    renderContent(selected);
+
+    renderContent(btn.dataset.option);
   });
 });
 
-// default content
-renderContent('all-classes');
-
-const batchSections = { /* your mapping */ };
-
 function renderContent(option) {
   batchContent.innerHTML = '';
+
   if (option === 'all-classes') {
     const msg = document.createElement('div');
     msg.className = 'motivational';
-    msg.innerHTML = `🧑🏻‍⚕️ <strong>Enjoy your NEET/JEE Journey</strong> 🧑🏻‍⚕️<br>
-                     🎊 <strong>Stay Motivated</strong> 🎊<br>
-                     📚 <strong>Keep Studying</strong> 🖋️`;
+    msg.innerHTML = `
+      🧑🏻‍⚕️ <strong>Enjoy  ur  NEET  Journey</strong> 🧑🏻‍⚕️<br>
+      🎊 <strong>Stay  Motivated</strong> 🎊<br>
+      📚 <strong>Keep Studying</strong> 🖋️
+    `;
     batchContent.appendChild(msg);
 
-    const sections = batchSections[batchName] || ["No data"];
+    const subjects = batchSubjects[batchName] || ["No data found for this batch."];
     const grid = document.createElement('div');
     grid.className = 'sections';
-    sections.forEach(sec => {
+
+    subjects.forEach(subject => {
       const b = document.createElement('button');
       b.className = 'section-btn';
-      b.textContent = sec;
+      b.textContent = subject;
       grid.appendChild(b);
     });
-    batchContent.appendChild(grid);
 
+    batchContent.appendChild(grid);
   } else {
-    const para = document.createElement('p');
-    para.textContent = `Content for "${option}" will come soon.`;
-    batchContent.appendChild(para);
+    const p = document.createElement('p');
+    p.textContent = `Content for "${option}" is coming soon!`;
+    batchContent.appendChild(p);
   }
 }
+
+// Render All Classes by default
+renderContent('all-classes');
+
+// SUBJECT MAPPING (as provided)
+const batchSubjects = {
+  "Yakeen NEET 2026": [
+    "Physics", "Botany", "Zoology",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Yakeen NEET 2.0 2026": [
+    "Physics : MR Sir", "Physics : Saleem Sir",
+    "Physical Chemistry : Amit Mahajan Sir", "Physical Chemistry : Sudhanshu Kumar Sir",
+    "Organic Chemistry : Pankaj Sijariya Sir", "Organic Chemistry : Shubh Karan Chaudhary Sir",
+    "Inorganic Chemistry : Mohit Dadheech Sir", "Inorganic Chemistry : Kunwar Om Pandey Sir",
+    "Botany : Rupesh Chaudhary Sir", "Botany : Vipin Sharma Sir",
+    "Zoology : Samapti Sinha Ma'am", "Zoology : Dr Akanksha Agarwal Ma'am"
+  ],
+  "Arjuna JEE 2026": [
+    "Physics", "Maths",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Arjuna JEE 2.0 2026": [
+    "Physics", "Maths",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Lakshya JEE 2026": [
+    "Physics", "Maths",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Lakshya JEE 2.0 2026": [
+    "Physics", "Maths",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Prayas JEE 2026": [
+    "Physics", "Maths",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Prayas JEE 2.0 2026": [
+    "Physics", "Maths",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Arjuna NEET 2026": [
+    "Physics", "Botany", "Zoology",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Arjuna NEET 2.0 2026": [
+    "Physics", "Botany", "Zoology",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Lakshya NEET 2026": [
+    "Physics", "Botany", "Zoology",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ],
+  "Lakshya NEET 2.0 2026": [
+    "Physics", "Botany", "Zoology",
+    "Physical Chemistry", "Organic Chemistry", "Inorganic Chemistry"
+  ]
+};
