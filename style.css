@@ -184,12 +184,25 @@ footer {
   padding: 1rem;
   font-size: 1rem;
   background: #1a1a1a;
-  color: White;
-  border: none; /* Removed border */
+  color: white;
+  border: none;
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional soft shadow */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  /* ✅ Fix: center content inside button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sections a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .section-btn:hover {
