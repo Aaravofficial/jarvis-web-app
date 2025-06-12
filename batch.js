@@ -57,11 +57,24 @@ function renderContent(option) {
     grid.className = "sections";
 
     subjects.forEach(subject => {
-      const btn = document.createElement("button");
-      btn.className = "section-btn";
-      btn.textContent = subject;
-      grid.appendChild(btn);
-    });
+  const link = document.createElement("a");
+  link.className = "section-btn";
+  link.style.textDecoration = "none";
+  link.style.display = "inline-block";
+  link.style.color = "inherit";
+  link.textContent = subject;
+
+  // Match subject to its HTML page
+  if (subject === "Physics : MR Sir") {
+    link.href = "physics-mr.html";
+  } else if (subject === "Physics : Saleem Sir") {
+    link.href = "physics-saleem.html";  // create later if needed
+  } else {
+    link.href = "#"; // or leave unlinked for now
+  }
+
+  grid.appendChild(link);
+});
 
     batchContent.appendChild(grid);
   } else {
