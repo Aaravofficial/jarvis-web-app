@@ -58,11 +58,10 @@ function renderContent(option) {
 
     subjects.forEach(subject => {
   const link = document.createElement("a");
-  link.className = "section-btn";
-  link.style.textDecoration = "none";
-  link.style.display = "inline-block";
-  link.style.color = "inherit";
-  link.textContent = subject;
+link.href = "#"; // default, change below
+link.innerHTML = `<div class="section-btn">${subject}</div>`;
+link.style.textDecoration = "none";
+link.style.color = "inherit";
 
   // Match subject to its HTML page
   if (subject === "Physics : MR Sir") {
