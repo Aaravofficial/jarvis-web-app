@@ -34,12 +34,6 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
       cursor: pointer;
       transition: transform 0.2s ease;
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      overflow: hidden;
-      text-overflow: ellipsis;
       text-decoration: none;
       color: inherit;
     }
@@ -49,32 +43,24 @@
     .section-title {
       font-weight: bold;
       font-size: 18px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       text-transform: uppercase;
     }
-    .section-type {
-      font-size: 14px;
-      color: #ccc;
-      margin-bottom: 10px;
-    }
-    .counts {
+    .counts-row {
       display: flex;
-      gap: 20px;
+      gap: 12px;
       font-size: 13px;
       color: #a5a5a5;
+      flex-wrap: wrap;
     }
-    .count-item {
-      display: flex;
-      align-items: center;
-      gap: 4px;
+    .counts-row span {
+      background: #2a2a2a;
+      padding: 4px 10px;
+      border-radius: 8px;
     }
     @media (max-width: 600px) {
       header h1 {
         font-size: 20px;
-      }
-      .counts {
-        flex-direction: column;
-        gap: 4px;
       }
     }
   </style>
@@ -84,31 +70,40 @@
     <h1>Physics - MR Sir (YAKEEN NEET 2.0 2026)</h1>
   </header>
 
-  <div class="container" id="sections"></div>
+  <div class="container" id="cards-container">
+    <!-- Cards will be dynamically inserted here -->
+  </div>
 
   <script>
-    fetch('physics-mr-data.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('sections');
-        data.forEach(section => {
-          const card = document.createElement('a');
-          card.href = section.link;
-          card.className = 'section-card';
+    const data = [
+      { title: "Mind Maps || ( Only PDF )", notes: 5, exercises: 0, videos: 0, link: "mind-maps.html" },
+      { title: "Short Notes || ( Only PDF )", notes: 10, exercises: 0, videos: 0, link: "short-notes.html" },
+      { title: "PYQs || ( Only PDF )", notes: 8, exercises: 0, videos: 0, link: "pyqs.html" },
+      { title: "Homework Solution || Physics : MR Sir", notes: 4, exercises: 2, videos: 6, link: "homework-solution.html" },
+      { title: "Assignment || Physics : MR Sir", notes: 7, exercises: 5, videos: 0, link: "assignment.html" },
+      { title: "Play With Physics : MR Sir", notes: 0, exercises: 0, videos: 5, link: "play-with-physics.html" },
+      { title: "Revision : MR Sir", notes: 0, exercises: 0, videos: 3, link: "revision.html" },
+      { title: "Practice Sheet || ( Only PDF )", notes: 6, exercises: 4, videos: 0, link: "practice-sheet.html" },
+      { title: "Ch - 01: Basic Maths & Calculus ( Mathematical Tools )", notes: 3, exercises: 2, videos: 4, link: "ch-01.html" },
+      { title: "Ch - 02: Vectors", notes: 2, exercises: 1, videos: 3, link: "ch-02.html" }
+    ];
 
-          card.innerHTML = `
-            <div class="section-title">${section.title}</div>
-            <div class="section-type">${section.type}</div>
-            <div class="counts">
-              <div class="count-item">📄 Notes: ${section.notes}</div>
-              <div class="count-item">📝 Exercises: ${section.exercises}</div>
-              <div class="count-item">🎥 Videos: ${section.videos}</div>
-            </div>
-          `;
+    const container = document.getElementById('cards-container');
 
-          container.appendChild(card);
-        });
-      });
+    data.forEach(item => {
+      const card = document.createElement('a');
+      card.className = 'section-card';
+      card.href = item.link;
+      card.innerHTML = `
+        <div class="section-title">${item.title}</div>
+        <div class="counts-row">
+          <span>Notes: ${item.notes}</span>
+          <span>Exercises: ${item.exercises}</span>
+          <span>Videos: ${item.videos}</span>
+        </div>
+      `;
+      container.appendChild(card);
+    });
   </script>
 </body>
 </html>
