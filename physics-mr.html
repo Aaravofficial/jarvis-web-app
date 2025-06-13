@@ -12,16 +12,19 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       background-color: #1f1f1f;
       padding: 20px;
       text-align: center;
     }
+
     header h1 {
       margin: 0;
       font-size: 24px;
       color: #00e5ff;
     }
+
     .container {
       padding: 20px;
     }
@@ -41,6 +44,11 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
       cursor: pointer;
       transition: transform 0.2s ease;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
     }
 
     .section-card:hover {
@@ -50,27 +58,29 @@
     .section-title {
       font-weight: bold;
       font-size: 18px;
-      margin-bottom: 10px;
       text-transform: uppercase;
     }
 
     .counts-row {
       display: flex;
       gap: 12px;
-      font-size: 13px;
+      font-size: 14px;
       color: #a5a5a5;
       flex-wrap: wrap;
     }
 
     .counts-row span {
       background: #2a2a2a;
-      padding: 4px 10px;
+      padding: 6px 12px;
       border-radius: 8px;
     }
 
     @media (max-width: 600px) {
       header h1 {
         font-size: 20px;
+      }
+      .section-card {
+        height: auto;
       }
     }
   </style>
@@ -81,7 +91,7 @@
   </header>
 
   <div class="container" id="cards-container">
-    <!-- Cards will be inserted here -->
+    <!-- Cards will be inserted by JavaScript -->
   </div>
 
   <script>
@@ -110,9 +120,9 @@
       card.innerHTML = `
         <div class="section-title">${item.title}</div>
         <div class="counts-row">
-          <span>Notes: ${item.notes}</span>
-          <span>Exercises: ${item.exercises}</span>
-          <span>Videos: ${item.videos}</span>
+          <span>📚 Notes: ${item.notes}</span>
+          <span>📝 Exercises: ${item.exercises}</span>
+          <span>🎥 Videos: ${item.videos}</span>
         </div>
       `;
 
