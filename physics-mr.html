@@ -26,24 +26,22 @@
       padding: 20px;
     }
     .section-card {
-  background-color: #1f1f1f;
-  border-left: 5px solid #00e5ff;
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  cursor: pointer;
-  transition: transform 0.2s ease;
-
-  /* ✅ Set fixed height (edit value as needed) */
-  height: 150px;
-
-  /* Optional: ensure internal content stays centered */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
+      background-color: #1f1f1f;
+      border-left: 5px solid #00e5ff;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-decoration: none;
+      color: inherit;
     }
     .section-card:hover {
       transform: translateY(-3px);
@@ -51,21 +49,32 @@
     .section-title {
       font-weight: bold;
       font-size: 18px;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       text-transform: uppercase;
     }
     .section-type {
       font-size: 14px;
       color: #ccc;
+      margin-bottom: 10px;
     }
     .counts {
+      display: flex;
+      gap: 20px;
       font-size: 13px;
-      margin-top: 8px;
       color: #a5a5a5;
+    }
+    .count-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
     @media (max-width: 600px) {
       header h1 {
         font-size: 20px;
+      }
+      .counts {
+        flex-direction: column;
+        gap: 4px;
       }
     }
   </style>
@@ -75,68 +84,31 @@
     <h1>Physics - MR Sir (YAKEEN NEET 2.0 2026)</h1>
   </header>
 
-  <div class="container">
+  <div class="container" id="sections"></div>
 
-    <div class="section-card">
-      <div class="section-title">Mind Maps || ( Only PDF )</div>
-      <div class="section-type">PDF Only</div>
-      <div class="counts">Notes: 5 | Videos: 0</div>
-    </div>
+  <script>
+    fetch('physics-mr-data.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('sections');
+        data.forEach(section => {
+          const card = document.createElement('a');
+          card.href = section.link;
+          card.className = 'section-card';
 
-    <div class="section-card">
-      <div class="section-title">Short Notes || ( Only PDF )</div>
-      <div class="section-type">PDF Only</div>
-      <div class="counts">Notes: 10 | Videos: 0</div>
-    </div>
+          card.innerHTML = `
+            <div class="section-title">${section.title}</div>
+            <div class="section-type">${section.type}</div>
+            <div class="counts">
+              <div class="count-item">📄 Notes: ${section.notes}</div>
+              <div class="count-item">📝 Exercises: ${section.exercises}</div>
+              <div class="count-item">🎥 Videos: ${section.videos}</div>
+            </div>
+          `;
 
-    <div class="section-card">
-      <div class="section-title">PYQs || ( Only PDF )</div>
-      <div class="section-type">PDF Only</div>
-      <div class="counts">Notes: 8 | Videos: 0</div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-title">Homework Solution || Physics : MR Sir</div>
-      <div class="section-type">Mixed (PDF + Video)</div>
-      <div class="counts">Notes: 4 | Videos: 6</div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-title">Assignment || Physics : MR Sir</div>
-      <div class="section-type">PDF Only</div>
-      <div class="counts">Notes: 7 | Videos: 0</div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-title">Play With Physics : MR Sir</div>
-      <div class="section-type">Video Only</div>
-      <div class="counts">Notes: 0 | Videos: 5</div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-title">Revision : MR Sir</div>
-      <div class="section-type">Video Only</div>
-      <div class="counts">Notes: 0 | Videos: 3</div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-title">Practice Sheet || ( Only PDF )</div>
-      <div class="section-type">PDF Only</div>
-      <div class="counts">Notes: 6 | Videos: 0</div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-title">Ch - 01: Basic Maths & Calculus ( Mathematical Tools )</div>
-      <div class="section-type">Mixed (PDF + Video)</div>
-      <div class="counts">Notes: 3 | Videos: 4</div>
-    </div>
-
-    <div class="section-card">
-      <div class="section-title">Ch - 02: Vectors</div>
-      <div class="section-type">Mixed (PDF + Video)</div>
-      <div class="counts">Notes: 2 | Videos: 3</div>
-    </div>
-
-  </div>
+          container.appendChild(card);
+        });
+      });
+  </script>
 </body>
-        </html>
+</html>
